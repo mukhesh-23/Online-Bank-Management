@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>Deposit</title>
+    <link rel="stylesheet" type="text/css" href="css/depositStyle.css"/>
+</h:head>
+<h:body>
+    <div class="navbar">
+        <h:form>
+            <h:commandButton styleClass="navbar-button" value="Home" action="home.xhtml"/>
+        </h:form>
+    </div>
+
+    <div class="form-container">
+    	<br></br>
+        <h3>Deposit Amount</h3>
+        <h:form id="depositForm">
+            <h:panelGrid styleClass="panel-grid">
+                <!-- Password Input -->
+                <h:outputLabel for="password" />
+                <h:inputSecret styleClass="text-input" id="password" value="#{deposit.password}" required="true" requiredMessage="Password is required" a:placeholder="Password">
+                </h:inputSecret>
+                <h:message for="password" style="color: red" />
+
+                <!-- Amount Input -->
+                <h:outputLabel for="amount" />
+                <h:inputText styleClass="text-input" id="amount" value="#{deposit.amount}" required="true" requiredMessage="Enter deposit amount" a:placeholder="Amount">
+                    <f:validateDoubleRange minimum="1" />
+                </h:inputText>
+                <h:message for="amount" style="color: red" />
+            </h:panelGrid>
+            <h:commandButton styleClass="button" value="Deposit" action="#{deposit.depositAmount}" />
+            <h:messages globalOnly="true" style="color: green" />
+        </h:form>
+    </div>
+</h:body>
+</html>

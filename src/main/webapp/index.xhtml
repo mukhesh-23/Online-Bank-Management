@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="css/indexStyle.css"/>
+</h:head>
+<h:body>
+    <h:form>
+    	<div class="about-box">
+	    	<div class="about-section">
+	            <h2>About Online Bank Management</h2>
+	            <p>
+	                Online bank management systems revolutionize the way we handle financial transactions, providing a seamless and convenient experience for users. These systems offer a comprehensive platform where users can manage their accounts, perform transactions, view statements, and monitor their finances from anywhere at any time. With advanced security features, online bank management ensures that your sensitive information remains protected. This modern approach to banking eliminates the need for physical visits to the bank, thereby saving time and providing real-time access to financial services. Whether it's transferring funds, paying bills, or checking account balances, online bank management empowers users with control and flexibility over their financial activities.
+	            </p>
+	            <h2>Security in Online Bank Management</h2>
+	            <p>
+	                Security in online bank management is paramount to protect users' financial data and ensure the integrity of banking transactions. Advanced encryption technologies are employed to safeguard sensitive information, such as account details and personal identification numbers, from unauthorized access. Multi-factor authentication adds an additional layer of security by requiring users to verify their identity through multiple means. Regular security audits and updates help identify and mitigate potential vulnerabilities, keeping the banking system resilient against cyber threats. Furthermore, secure socket layer (SSL) certificates ensure that data transmitted between users and the bank's servers is encrypted and secure. With these robust security measures in place, users can confidently manage their finances online, knowing that their information is well-protected.
+	            </p>
+	        </div>
+        </div>
+        
+        <div class="center-container">
+            <h:commandButton value="Create Account" action="createuser.xhtml" styleClass="center-button"/>
+            <h:outputText value="Already have an account?" />
+            <h:commandButton value="Login" action="login.xhtml" styleClass="center-button"/>
+            
+        </div>
+        
+    </h:form>
+</h:body>
+</html>

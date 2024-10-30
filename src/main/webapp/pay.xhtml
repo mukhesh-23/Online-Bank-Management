@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+	<h:head>
+	    <title>Pay</title>
+	    
+	            <link rel="stylesheet" type="text/css" href="css/payStyle.css"/>
+	    
+	</h:head>
+<h:body>
+<div class="navbar">
+	<h:form><h:commandButton styleClass="navbar-button" value="Home" action="home.xhtml"/></h:form>
+    
+</div>
+<div class="form-container">
+	<br></br>
+	<h3>Transfer Amount</h3>
+    <h:form id="payForm">
+        <h:panelGrid styleClass="panel-grid">
+            <!-- Password Input -->
+            <h:outputLabel for="mobile" />
+            <h:inputText styleClass="text-input" id="mobile" value="#{pay.mobile}" required="true" requiredMessage="Enter Mobile number" validatorMessage="Enter 10 digit Mobile number" a:placeholder="Mobile Number">
+                <f:validateRegex pattern="\d{10}" />
+            </h:inputText>
+            <h:message for="mobile" style="color: red" />
+
+            <!-- Amount Input -->
+            <h:outputLabel for="amount" />
+            <h:inputText styleClass="text-input" id="amount" value="#{pay.amount}" required="true" requiredMessage="Enter deposit amount" validatorMessage="Amount should be minimum of 1 INR" a:placeholder="Amount">
+                <f:validateDoubleRange minimum="1" />
+            </h:inputText>
+            <h:message for="amount" style="color: red" />
+            
+            <h:outputLabel for="password" />
+            <h:inputSecret styleClass="text-input" id="password" value="#{pay.password}" required="true" requiredMessage="Password is required" a:placeholder="Password">
+                
+            </h:inputSecret>
+            <h:message for="password" style="color: red" />
+        </h:panelGrid>
+        <br></br>
+        <h:commandButton styleClass="button" value="Pay" action="#{pay.payAmount}" />
+        <h:messages globalOnly="true" style="color: green" />
+        <br></br>
+        <br></br>
+        
+    </h:form>
+    </div>
+   </h:body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="css/homeStyle.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="navbar">
+                <div class="navbar-buttons">
+                    <h:commandButton value="Account" action="account.xhtml" styleClass="navbar-button"/>
+                    <h:commandButton value="Deposit" action="deposit.xhtml" styleClass="navbar-button"/>
+                    <h:commandButton value="Withdraw" action="withdraw.xhtml" styleClass="navbar-button"/>
+                    <h:commandButton value="Pay" action="pay.xhtml" styleClass="navbar-button"/>
+                    <h:commandButton value="Transactions" action="transactions.xhtml" styleClass="navbar-button"/>
+                    <h:commandButton value="Apply Loan" action="loan.xhtml" styleClass="navbar-button"/>
+                </div>
+                <div class="navbar-logout">
+                    <h:commandButton value="Logout" action="login.xhtml" styleClass="navbar-button"/>
+                </div>
+            </div>
+        </h:form>
+
+        <div class="content">
+            <h:form>
+                <h1>Welcome <h:outputText styleClass="text-values" value="#{login.u.name}" /></h1>
+                
+                <p class="text-output">
+                    Welcome to our Bank Management System, a comprehensive solution designed to streamline and enhance your banking experience. Our platform offers a robust suite of features, including secure account management, seamless transaction processing, and intuitive user interfaces. With our system, you can effortlessly manage your finances, monitor your account activity, and perform essential banking operations such as deposits, withdrawals, and transfers with ease. Our commitment to security ensures that your personal and financial information is protected at all times, providing you with peace of mind as you manage your banking needs. Join us and experience a new level of efficiency and convenience in banking.
+                </p>
+                <p class="text-output">
+					Our platform boasts a clean and intuitive interface, making navigation simple and straightforward for users of all tech levels. Access your account anytime, anywhere with our mobile-friendly design, optimized for both desktop and mobile devices. Additionally, our dedicated customer support team is available to assist you with any queries or issues, ensuring a smooth and trouble-free banking experience. Experience the future of banking with our state-of-the-art Bank Management System, where efficiency meets convenience.               
+				 </p>
+				 <p class="text-output">
+				 In addition to basic banking functionalities, our system offers advanced features such as customizable account alerts, detailed financial reports, and budget management tools to help you plan and track your expenses efficiently. Our integration with various financial services enables you to connect multiple accounts and manage them from a single dashboard, streamlining your financial management process.Experience a new level of efficiency and convenience with our Bank Management System. From secure transactions and real-time account monitoring to comprehensive customer support and advanced financial tools, our platform is designed to enhance your banking experience and empower you with greater control over your finances. Join us and embrace the future of banking with a system that prioritizes your security, convenience, and financial well-being.
+
+				 
+            	</p>
+            </h:form>
+        </div>
+    </h:body>
+</html>

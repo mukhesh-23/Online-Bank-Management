@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>Withdraw</title>
+        <link rel="stylesheet" type="text/css" href="css/withdrawStyle.css"/>
+    
+</h:head>
+<h:body>
+	 <div class="navbar">
+        <h:form>
+    		<h:commandButton styleClass="navbar-button" value="Home" action="home.xhtml"/>
+        </h:form>
+    </div>
+    <div class="form-container">
+    <br></br>
+    <h3>Withdraw Amount</h3>
+    <h:form id="withdrawForm">
+        <h:panelGrid styleClass="panel-grid">
+            <!-- Password Input -->
+            <h:outputLabel for="password"/>
+            <h:inputSecret styleClass="text-input" id="password" value="#{withdraw.password}" required="true" requiredMessage="Password is required" a:placeholder="Password">
+                
+            </h:inputSecret>
+            <h:message for="password" style="color: red" />
+
+            <!-- Amount Input -->
+            <h:outputLabel for="amount" />
+            <h:inputText styleClass="text-input" id="amount" value="#{withdraw.amount}" required="true" requiredMessage="Enter deposit amount" a:placeholder="Amount">
+                <f:validateDoubleRange minimum="1" />
+            </h:inputText>
+            <h:message for="amount" style="color: red" />
+        </h:panelGrid>
+        <br></br>
+        <h:commandButton styleClass="button" value="Withdraw" action="#{withdraw.withdrawAmount}" />
+        <h:messages globalOnly="true" style="color: green" />
+        <br></br>
+        <br></br>
+        
+    </h:form>
+    </div>
+</h:body>
+</html>

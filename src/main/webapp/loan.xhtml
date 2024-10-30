@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>Loan</title>
+    <link rel="stylesheet" type="text/css" href="css/loanStyle.css"/>
+</h:head>
+<h:body>
+	<h:form>
+            <div class="navbar">
+                <div class="navbar-buttons">
+                    <h:commandButton value="Home" action="home.xhtml" styleClass="navbar-button"/>
+                    <h:commandButton value="Applications" action="userLoans.xhtml" styleClass="navbar-button"/>
+                    
+                </div>
+                
+            </div>
+        </h:form>
+    <div class="form-container">
+        <h3>Apply Loan</h3>
+        <h:form id="createUserForm">
+            <h:panelGrid styleClass="panel-grid">
+                <!-- Name Input -->
+                <h:outputLabel for="amount" />
+                <h:inputText id="amount" styleClass="text-input" value="#{loan.amount}" required="true" requiredMessage="Amount is required" validatorMessage="Amount Should be minimum of 10000" a:placeholder="Amount">
+                    <f:validateDoubleRange minimum="10000" />
+                </h:inputText>
+                <h:message for="amount" style="color: red" />
+                <br></br>
+                <!-- Mobile Number Input -->
+                <h:outputLabel for="tenure" />
+                <h:inputText id="tenure" styleClass="text-input" value="#{loan.tenure}" required="true" requiredMessage="Tenure is required" validatorMessage="Tenure must be Integer" a:placeholder="Tenure">
+                    <f:validateDoubleRange minimum="1" />
+                </h:inputText>
+                <h:message for="tenure" style="color: red" />
+                <br></br>
+                
+                <!-- Password Input -->
+                <h:outputLabel for="income" />
+                <h:inputText id="income" styleClass="text-input" value="#{loan.income}" required="true" requiredMessage="Income is required" validatorMessage="Income must be Number" a:placeholder="Income">
+                    <f:validateDoubleRange minimum="1" />
+                </h:inputText>
+                <h:message for="income" style="color: red" />
+                <br></br>
+                <!-- Confirm Password Input -->
+                <h:outputLabel for="password" />
+                <h:inputSecret id="password" styleClass="text-input" value="#{loan.password}" required="true" requiredMessage="Type your password" a:placeholder="Confirm password">
+                </h:inputSecret>
+                <h:message for="password" style="color: red" />
+                <br></br>
+                <!-- Balance Input -->
+                
+            </h:panelGrid>
+            <br></br>
+            <h:commandButton value="Apply Loan" styleClass="button" action="#{loan.applyLoan}" />
+            <h:messages globalOnly="true" style="color: red" />
+            <br></br>
+            
+        </h:form>
+    </div>
+</h:body>
+</html>

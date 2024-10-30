@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>Create User</title>
+    <link rel="stylesheet" type="text/css" href="css/createAccStyle.css"/>
+</h:head>
+<h:body>
+    <div class="form-container">
+        <h3>Create Account</h3>
+        <h:form id="createUserForm">
+            <h:panelGrid styleClass="panel-grid">
+                <!-- Name Input -->
+                <h:outputLabel for="name" />
+                <h:inputText id="name" styleClass="text-input" value="#{createuser.name}" required="true" requiredMessage="Name is required for account creation" validatorMessage="Name must contain at least 3 characters" a:placeholder="Name">
+                    <f:validateLength minimum="3" />
+                </h:inputText>
+                <h:message for="name" style="color: red" />
+                <br></br>
+                <!-- Mobile Number Input -->
+                <h:outputLabel for="mobileNumber" />
+                <h:inputText id="mobileNumber" styleClass="text-input" value="#{createuser.mobile}" required="true" requiredMessage="Mobile number is required" validatorMessage="Mobile number must be at least 10 digits" a:placeholder="Mobile Number">
+                    <f:validateRegex pattern="\d{10}" />
+                </h:inputText>
+                <h:message for="mobileNumber" style="color: red" />
+                <br></br>
+                <h:outputText styleClass="radio-text" value="Select Account type" />
+                <h:selectOneRadio id="type" styleClass="radio-button" value="#{createuser.type}" required="true" requiredMessage="Select Account type">
+                    <f:selectItem styleClass="radio-buttons" itemValue="Savings" itemLabel="Savings"/>
+                    <f:selectItem styleClass="radio-buttons" itemValue="Current" itemLabel="Current"/>
+                </h:selectOneRadio>
+                <h:message for="type" style="color: red" />
+                <br></br>
+                <h:outputLabel for="balance" />
+                <h:inputText id="balance" styleClass="text-input" value="#{createuser.balance}" required="true" requiredMessage="Enter Minimum deposit" validatorMessage="Minimum deposit should be at least 5000INR" a:placeholder="Minimum deposit in Rupees">
+                    <f:validateDoubleRange minimum="5000" />
+                </h:inputText>
+                <h:message for="balance" style="color: red" />
+                <br></br>
+                <!-- Password Input -->
+                <h:outputLabel for="password" />
+                <h:inputSecret id="password" styleClass="text-input" value="#{createuser.password}" required="true" requiredMessage="Password is required" validatorMessage="Password must be at least 6 characters" a:placeholder="Password">
+                    <f:validateLength minimum="6" />
+                </h:inputSecret>
+                <h:message for="password" style="color: red" />
+                <br></br>
+                <!-- Confirm Password Input -->
+                <h:outputLabel for="confirmPassword" />
+                <h:inputSecret id="confirmPassword" styleClass="text-input" value="#{createuser.confirmPassword}" required="true" requiredMessage="Type your password again" a:placeholder="Confirm password">
+                </h:inputSecret>
+                <h:message for="confirmPassword" style="color: red" />
+                <br></br>
+                <!-- Balance Input -->
+                
+            </h:panelGrid>
+            <br></br>
+            <h:commandButton value="Create User" styleClass="button" action="#{createuser.createUser}" />
+            <h:messages globalOnly="true" style="color: red" />
+            <br></br>
+            <br></br>
+            <h:outputText value="Already have an account ?" />
+            <br></br>
+            <br></br>
+            <h:button styleClass="button" value="Login" outcome="login.xhtml"/>
+        </h:form>
+    </div>
+</h:body>
+</html>

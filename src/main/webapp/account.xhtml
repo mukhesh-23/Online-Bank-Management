@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:head>
+        <title>Account</title>
+        <link rel="stylesheet" type="text/css" href="css/accountStyle.css"/>
+    </h:head>
+    <h:body>
+    		<div class="navbar">
+                <div class="navbar-buttons">
+                	<h:form>
+                    <h:commandButton value="Home" action="home.xhtml" styleClass="navbar-button"/>
+                    </h:form>
+                </div>
+                
+            </div>
+    	
+    	<div class="content">
+    		<h1>Account Details</h1>
+	        <h:form>
+	            <table class="info-table">
+	                    
+	                    
+	                    <tr>
+	                        <td>Mobile Number</td>
+	                        <td><h:outputText styleClass="text-values" value="#{login.u.mobile}"/></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Account Type</td>
+	                        <td><h:outputText styleClass="text-values" value="#{login.u.type}" /></td>
+	                    </tr>
+	                    <tr>
+	                        <td>Balance</td>
+	                        <td><h:outputText styleClass="text-values" value="#{login.u.balance}" /></td>
+	                    </tr>
+	                </table>
+	        </h:form>
+        </div>
+      </h:body>
+</html>

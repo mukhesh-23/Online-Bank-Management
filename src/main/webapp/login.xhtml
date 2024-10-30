@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/loginStyle.css"/>
+</h:head>
+<h:body>
+    <div class="form-container">
+    <h2>Login</h2>
+        <h:form>
+            <h:panelGrid styleClass="panel-grid" >
+
+                <!-- Username Input -->
+                <br></br>
+                <h:outputLabel for="mob"  />
+                <h:inputText styleClass="text-input" id="mob" value="#{login.number}" required="true" requiredMessage="Enter mobile number" a:placeholder="Mobile number"/>
+                <h:message for="mob" style="color: red" />
+				<br></br>
+                <!-- Password Input -->
+                <h:outputLabel for="password"  />
+                <h:inputSecret styleClass="text-input" id="password" value="#{login.password}" required="true" requiredMessage="Enter Password" a:placeholder="Password"/>
+                <h:message for="password" style="color: red" />
+
+            </h:panelGrid>
+            <br></br>
+            <br></br>
+            <h:commandButton styleClass="button" value="Login" action="#{login.loginUser}" />
+            <h:messages globalOnly="true" style="color: red" />
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <h:outputText value="Don't have an account ?" />
+            <br></br>
+            <br></br>
+            <h:button styleClass="button" value="Create Account" outcome="createuser.xhtml"/>
+            
+        </h:form>
+    </div>
+</h:body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Admin Page</title>
+    <link rel="stylesheet" type="text/css" href="css/adminStyle.css"/>
+</h:head>
+<h:body>
+    <div class="navbar">
+        <h:form>
+            <h:commandButton styleClass="navbar-button3" action="admin.xhtml" value="Home"/>
+        </h:form>
+    </div>
+    <div class="container">
+    	<h1>Loan Applications</h1>
+	    <h:form>
+	        <h:dataTable styleClass="data-table" value="#{admin.l}" var="ln">
+	            <h:column>
+	                <f:facet name="header">Mobile</f:facet>
+	                <h:outputText value="#{ln.mobile}" />
+	            </h:column>
+	            <h:column>
+	                <f:facet name="header">Amount</f:facet>
+	                <h:outputText value="#{ln.amount}" />
+	            </h:column>
+	            <h:column>
+	                <f:facet name="header">Income</f:facet>
+	                <h:outputText value="#{ln.income}" />
+	            </h:column>
+	            <h:column>
+	                <f:facet name="header">Tenure</f:facet>
+	                <h:outputText value="#{ln.tenure}" />
+	            </h:column>
+	            
+	            <h:column>
+	            	<h:commandButton styleClass="rm-button" value="Approve" action="#{admin.approveLoan(ln.mobile,ln.amount,ln.tenure)}" />
+	            	
+	            </h:column>
+	            <h:column>
+	            	<h:commandButton styleClass="rm-button" value="Reject" action="#{admin.rejectLoan(ln.mobile,ln.amount,ln.tenure)}" />
+	            	
+	            </h:column>
+	        </h:dataTable>
+	    </h:form>
+    </div>
+</h:body>
+</html>

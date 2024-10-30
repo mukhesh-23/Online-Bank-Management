@@ -1,0 +1,85 @@
+/* css/indexStyle.css */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #656E73;
+    background: url('images/createpage2.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.form-container {
+    background-color: #dadcd7; /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 38px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 500px; /* Limit the width of the form */
+    
+}
+
+h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.panel-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.radio-button {
+    display: flex;
+    
+    
+}
+.radio-text{
+	margin-right:103px;
+}
+
+
+
+
+.text-input {
+    padding-left: 15px;
+    padding-right:15px;
+    padding-bottom:15px;
+    padding-top:15px;
+    border-radius: 27px;
+    border: 1px solid #dadcd7;
+    box-sizing: border-box;
+    width:300px;
+    
+}
+.text-input::placeholder {
+    color: black; /* Change this to your desired color */
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #5c7186;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: #4682b4;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+
